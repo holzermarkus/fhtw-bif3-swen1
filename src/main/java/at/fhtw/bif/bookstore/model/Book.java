@@ -6,12 +6,21 @@ public class Book {
     private String publisher;
     private String author;
     private String isbn;
+    private BookType bookType = BookType.PAPER;
 
     public Book(String title, String publisher, String author, String isbn) {
         this.title = title;
         this.publisher = publisher;
         this.author = author;
         this.isbn = isbn;
+    }
+
+    public BookType getBookType() {
+        return bookType;
+    }
+
+    public void setBookType(BookType bookType) {
+        this.bookType = bookType;
     }
 
     public String getTitle() {
@@ -46,4 +55,14 @@ public class Book {
         this.isbn = isbn;
     }
 
+    @Override
+    public String toString() {
+        return "Book{" +
+                "title='" + title + '\'' +
+                ", publisher='" + publisher + '\'' +
+                ", author='" + author + '\'' +
+                ", isbn='" + isbn + '\'' +
+                ", bookType=" + bookType +
+                '}';
+    }
 }
